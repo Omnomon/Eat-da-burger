@@ -18,13 +18,17 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
-  burger.insertOne([
-    "burger_name", "devoured"
-  ], [
-    req.body.name, req.body.devoured
-  ]).then(function(){
-    res.redirect("/");
-  });
+  if (req.body.name.length === 0) {
+    alert("Please enter a name for the burger ")
+  } else {
+    burger.insertOne([
+      "burger_name", "devoured"
+    ], [
+      req.body.name, req.body.devoured
+    ]).then(function(){
+      res.redirect("/");
+    });
+  }
 });
 
 router.put("/:id", function(req, res) {
