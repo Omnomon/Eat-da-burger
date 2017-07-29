@@ -10,7 +10,7 @@ CREATE TABLE burger (
     ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	PRIMARY KEY (id)
 );
-INSERT INTO cats (burger_name, devoured) 
+INSERT INTO burger (burger_name, devoured) 
 VALUES("Double-double", true),
 ("Big Mac", true),
 ("Whopper", true),
